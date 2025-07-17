@@ -6,10 +6,16 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libonig-dev \
     libxml2-dev \
+    libzip-dev \
     unzip \
     wget \
+    cron \
     mariadb-client \
-    && docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd
+    libicu-dev \
+    libldap2-dev \
+    zlib1g-dev \
+    libssl-dev \
+    && docker-php-ext-install pdo pdo_mysql mysqli intl zip gd curl exif opcache
 
 # Baixar o GLPI
 WORKDIR /var/www/html
